@@ -1,0 +1,75 @@
+/* =========================
+   THEME VARIABLES
+========================= */
+
+/* Default Light Theme (already applied via :root in style.css)
+   This file overrides values when dark mode is active
+*/
+
+body.dark-theme {
+    --bg-color: #0f0f14;
+    --text-color: #f1f1f1;
+    --subtext-color: #b5b5b5;
+
+    --secondary-color: #1a1a22;
+    --border-color: #2a2a35;
+
+    --card-bg: #1c1c26;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* =========================
+   SMOOTH THEME TRANSITION
+========================= */
+
+body,
+.header,
+.section,
+.skill-card,
+.edu-card,
+.portfolio-item,
+.footer {
+    transition: 
+        background-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+/* =========================
+   DARK MODE SPECIFIC FIXES
+========================= */
+
+body.dark-theme .header {
+    background-color: var(--bg-color);
+}
+
+body.dark-theme .nav-links a {
+    color: var(--text-color);
+}
+
+body.dark-theme .filter-btn {
+    border-color: var(--border-color);
+    color: var(--text-color);
+}
+
+body.dark-theme .filter-btn.active {
+    background: var(--primary-color);
+    color: #ffffff;
+}
+
+body.dark-theme .footer {
+    background-color: var(--secondary-color);
+}
+
+/* =========================
+   THEME BUTTON STATES
+========================= */
+
+.theme-btn {
+    transition: transform 0.3s ease;
+}
+
+.theme-btn:hover {
+    transform: rotate(20deg);
+}
