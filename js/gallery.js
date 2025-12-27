@@ -1,61 +1,97 @@
 /* =========================
-   PORTFOLIO FILTER & GALLERY
+   PORTFOLIO FILTER + LOAD MORE (FIXED)
 ========================= */
 
-const filterButtons = document.querySelectorAll(".filter-btn");
-const portfolioItems = document.querySelectorAll(".portfolio-item");
+document.addEventListener("DOMContentLoaded", () => {
 
-/* =========================
-   FILTER LOGIC
-========================= */
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const portfolioItems = Array.from(document.querySelectorAll(".portfolio-item"));
+    const loadMoreBtn = document.getElementById("loadMoreBtn");
 
-filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
+    if (!loadMoreBtn || portfolioItems.length === 0) return;
 
-        /* Remove active class from all buttons */
-        filterButtons.forEach(btn => btn.classList.remove("active"));
-        button.classList.add("active");
+    let visibleCount = 0;
+    let currentFilter = "all";
 
-        const filterValue = button.textContent.toLowerCase();
+    /* =========================
+       DEVICE BASED INITIAL COUNT
+    ========================= */
 
-        portfolioItems.forEach((item) => {
-            const category = item.getAttribute("data-category");
+    function getInitialCount() {
+        const width = window.innerWidth;
+        if (width <= 576) return 3;   // Mobile
+        if (width <= 768) return 6;   // Tablet
+        return 8;                     // Laptop+
+    }
 
-            if (filterValue === "all") {
+    /* =========================
+       GET FILTERED ITEMS
+    ========================= */
+
+    function getFilteredItems() {
+        if (currentFilter === "all") return portfolioItems;
+        return portfolioItems.filter(
+            item => item.dataset.category === currentFilter
+        );
+    }
+
+    /* =========================
+       UPDATE GALLERY
+    ========================= */
+
+    function updateGallery() {
+        const filteredItems = getFilteredItems();
+
+        portfolioItems.forEach(item => {
+            item.style.display = "none";
+        });
+
+        filteredItems.forEach((item, index) => {
+            if (index < visibleCount) {
                 item.style.display = "block";
-            } 
-            else if (category === filterValue) {
-                item.style.display = "block";
-            } 
-            else {
-                item.style.display = "none";
             }
         });
+
+        // Show / hide Load More button
+        loadMoreBtn.style.display =
+            visibleCount < filteredItems.length ? "inline-block" : "none";
+    }
+
+    /* =========================
+       INIT
+    ========================= */
+
+    function initGallery() {
+        visibleCount = getInitialCount();
+        updateGallery();
+    }
+
+    /* =========================
+       LOAD MORE
+    ========================= */
+
+    loadMoreBtn.addEventListener("click", () => {
+        visibleCount += getInitialCount();
+        updateGallery();
     });
-});
 
-/* =========================
-   IMAGE PREVIEW (LIGHTBOX)
-========================= */
+    /* =========================
+       FILTER BUTTONS
+    ========================= */
 
-const modal = document.createElement("div");
-modal.classList.add("image-modal");
+    filterButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
 
-const modalImg = document.createElement("img");
-modal.appendChild(modalImg);
+            filterButtons.forEach(b => b.classList.remove("active"));
+            btn.classList.add("active");
 
-document.body.appendChild(modal);
+            // 🔥 IMPORTANT FIX
+            currentFilter = btn.textContent.trim().toLowerCase();
 
-/* Open image */
-portfolioItems.forEach(item => {
-    item.addEventListener("click", () => {
-        const img = item.querySelector("img");
-        modalImg.src = img.src;
-        modal.classList.add("open");
+            visibleCount = getInitialCount();
+            updateGallery();
+        });
     });
-});
 
-/* Close image */
-modal.addEventListener("click", () => {
-    modal.classList.remove("open");
+    initGallery();
 });

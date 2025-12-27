@@ -1,29 +1,52 @@
 /* =========================
-   THEME TOGGLE LOGIC
+   THEME TOGGLE LOGIC (OPTIMIZED + ACCESSIBLE)
 ========================= */
 
-const themeToggleBtn = document.getElementById("theme-toggle");
-const body = document.body;
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
 
-/* Load saved theme on page load */
-const savedTheme = localStorage.getItem("theme");
+    if (!themeToggleBtn) return;
 
-if (savedTheme === "dark") {
-    body.classList.add("dark-theme");
-    themeToggleBtn.textContent = "☀️";
-} else {
-    themeToggleBtn.textContent = "🌙";
-}
+    /* =========================
+       APPLY THEME
+    ========================= */
 
-/* Toggle theme on button click */
-themeToggleBtn.addEventListener("click", () => {
-    body.classList.toggle("dark-theme");
+    function applyTheme(isDark) {
+        body.classList.toggle("dark-theme", isDark);
 
-    if (body.classList.contains("dark-theme")) {
-        localStorage.setItem("theme", "dark");
-        themeToggleBtn.textContent = "☀️";
-    } else {
-        localStorage.setItem("theme", "light");
-        themeToggleBtn.textContent = "🌙";
+        themeToggleBtn.textContent = isDark ? "☀️" : "🌙";
+        themeToggleBtn.setAttribute(
+            "aria-label",
+            isDark ? "Switch to light theme" : "Switch to dark theme"
+        );
+        themeToggleBtn.setAttribute("aria-pressed", isDark);
+        themeToggleBtn.title = isDark ? "Light mode" : "Dark mode";
     }
+
+    /* =========================
+       LOAD SAVED / SYSTEM THEME
+    ========================= */
+
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+    const isDarkMode =
+        savedTheme === "dark" ||
+        (savedTheme === null && prefersDark);
+
+    applyTheme(isDarkMode);
+
+    /* =========================
+       TOGGLE THEME
+    ========================= */
+
+    themeToggleBtn.addEventListener("click", () => {
+        const isDark = !body.classList.contains("dark-theme");
+
+        applyTheme(isDark);
+        localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+
+    console.log("Theme toggle loaded");
 });

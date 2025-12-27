@@ -5,24 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Priyanka Verma | Graphic Designer</title>
 
-    <!-- CSS Files -->
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/themes.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
+    <!-- ================= SEO META TAGS ================= -->
+    <meta
+      name="description"
+      content="Priyanka Verma is a creative graphic designer specializing in social media creatives, branding basics, and digital design. View portfolio and contact for design work."
+    />
+
+    <meta
+      name="keywords"
+      content="Priyanka Verma, Graphic Designer, Social Media Designer, Instagram Post Design, Branding, Canva Designer, Photoshop Designer, Illustrator Designer, Graphic Designer India"
+    />
+
+    <meta name="author" content="Priyanka Verma" />
+
+    <!-- Helps mobile SEO -->
+    <meta name="theme-color" content="#6c63ff" />
+
+    <!-- ================= OPEN GRAPH META TAGS ================= -->
+    <meta
+      property="og:title"
+      content="Priyanka Verma | Graphic Designer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Creative graphic designer specializing in Instagram posts, branding, and digital design. Explore my portfolio and get in touch."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://priyanka-verma01.github.io/portfolio/"
+    />
+
+    <meta
+      property="og:image"
+      content="https://priyanka-verma01.github.io/portfolio/"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/themes.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
   </head>
+
   <body>
     <!-- ================= HEADER ================= -->
     <header class="header">
       <div class="container nav-wrapper">
         <div class="logo">Priyanka.</div>
 
-        <nav class="nav">
+        <nav class="nav" aria-label="Main Navigation">
           <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
@@ -33,14 +75,16 @@
           </ul>
         </nav>
 
-        <button id="theme-toggle" class="theme-btn">🌙</button>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+          🌙
+        </button>
       </div>
     </header>
 
-    <!-- Scroll Progress Bar -->
+    <!-- Scroll Progress -->
     <div id="scroll-progress"></div>
 
-    <!-- ================= HERO SECTION ================= -->
+    <!-- ================= HERO ================= -->
     <section id="home" class="hero">
       <div class="container hero-content">
         <div class="hero-text">
@@ -52,7 +96,6 @@
           </p>
 
           <div class="hero-buttons">
-            <!-- <a href="#portfolio" class="btn primary-btn">View Portfolio</a> -->
             <a href="#contact" class="btn secondary-btn">Contact Me</a>
             <a
               href="assets/resume/Priyanka_Verma_Resume.pdf"
@@ -65,22 +108,24 @@
         </div>
 
         <div class="hero-image">
-          <!-- Designer illustration / avatar -->
-          <img src="assets\img\profile-pic.jpeg" alt="Designer Avatar" />
+          <img
+            src="assets/img/profile-pic.jpeg"
+            alt="Priyanka Verma Graphic Designer Avatar"
+            loading="lazy"
+          />
         </div>
       </div>
     </section>
 
-    <!-- ================= ABOUT SECTION ================= -->
+    <!-- ================= ABOUT ================= -->
     <section id="about" class="about section">
       <div class="container">
         <h2 class="section-title">About Me</h2>
 
         <p class="about-text">
           I am a creative and detail-oriented graphic designer fresher from
-          Unnao, Uttar Pradesh. I have hands-on experience through practice
-          projects and design samples, with a strong understanding of layout,
-          typography, color theory, and branding fundamentals.
+          Unnao, Uttar Pradesh, with hands-on practice projects and a strong
+          understanding of layout, typography, color theory, and branding.
         </p>
 
         <div class="about-info">
@@ -91,7 +136,7 @@
       </div>
     </section>
 
-    <!-- ================= SKILLS SECTION ================= -->
+    <!-- ================= SKILLS ================= -->
     <section id="skills" class="skills section">
       <div class="container">
         <h2 class="section-title">Skills</h2>
@@ -111,7 +156,7 @@
       </div>
     </section>
 
-    <!-- ================= PORTFOLIO SECTION ================= -->
+    <!-- ================= PORTFOLIO ================= -->
     <section id="portfolio" class="portfolio section">
       <div class="container">
         <h2 class="section-title">Design Showcase</h2>
@@ -126,114 +171,53 @@
           <!-- Instagram Posts -->
           <div class="portfolio-item" data-category="instagram posts">
             <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Instagram Post Design 1"
+              src="assets/graphic-designs/design (1).jpeg"
+              alt="Instagram Design 1"
+              loading="lazy"
             />
           </div>
 
           <div class="portfolio-item" data-category="instagram posts">
             <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Instagram Post Design 2"
+              src="assets/graphic-designs/design (1).jpeg"
+              alt="Instagram Design 2"
+              loading="lazy"
             />
           </div>
 
           <div class="portfolio-item" data-category="instagram posts">
             <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Instagram Post Design 3"
-            />
-          </div>
-
-          <div class="portfolio-item" data-category="instagram posts">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Instagram Post Design 4"
-            />
-          </div>
-
-          <div class="portfolio-item" data-category="instagram posts">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Instagram Post Design 5"
-            />
-          </div>
-
-          <div class="portfolio-item" data-category="instagram posts">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Instagram Post Design 6"
-            />
-          </div>
-
-          <div class="portfolio-item" data-category="instagram posts">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Instagram Post Design 7"
-            />
-          </div>
-
-          <div class="portfolio-item" data-category="instagram posts">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Instagram Post Design 8"
+              src="assets/graphic-designs/design (1).jpeg"
+              alt="Instagram Design 3"
+              loading="lazy"
             />
           </div>
 
           <!-- Other Designs -->
           <div class="portfolio-item" data-category="other designs">
             <img
-              src="assets\graphic-designs\design (1).jpeg"
+              src="assets/graphic-designs/design (1).jpeg"
               alt="Other Design 1"
+              loading="lazy"
             />
           </div>
 
           <div class="portfolio-item" data-category="other designs">
             <img
-              src="assets\graphic-designs\design (1).jpeg"
+              src="assets/graphic-designs/design (1).jpeg"
               alt="Other Design 2"
+              loading="lazy"
             />
           </div>
+        </div>
 
-          <div class="portfolio-item" data-category="other designs">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Other Design 3"
-            />
-          </div>
-
-          <div class="portfolio-item" data-category="other designs">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Other Design 4"
-            />
-          </div>
-
-          <div class="portfolio-item" data-category="other designs">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Other Design 5"
-            />
-          </div>
-
-          <div class="portfolio-item" data-category="other designs">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Other Design 6"
-            />
-          </div>
-
-          <div class="portfolio-item" data-category="other designs">
-            <img
-              src="assets\graphic-designs\design (1).jpeg"
-              alt="Other Design 7"
-            />
-          </div>
+        <div class="load-more-wrapper">
+          <button id="loadMoreBtn" class="btn primary-btn">Load More</button>
         </div>
       </div>
     </section>
 
-    <!-- ================= EDUCATION SECTION ================= -->
+    <!-- ================= EDUCATION ================= -->
     <section id="education" class="education section">
       <div class="container">
         <h2 class="section-title">Education & Certifications</h2>
@@ -260,37 +244,37 @@
       </div>
     </section>
 
-    <!-- ================= CONTACT SECTION ================= -->
+    <!-- ================= CONTACT ================= -->
     <section id="contact" class="contact section">
       <div class="container">
         <h2 class="section-title">Contact Me</h2>
 
         <div class="contact-wrapper">
-          <!-- LEFT SIDE: CONTACT DETAILS -->
           <div class="contact-info">
             <h3>Get in Touch</h3>
+            <p>Feel free to contact me for design work or feedback.</p>
 
-            <p>
-              Feel free to contact me for design work, collaborations, or
-              feedback. I’ll be happy to connect with you.
-            </p>
-
-            <p><strong>📞 Phone:</strong> 9305867002</p>
+            <p><strong></p>
             <p><strong>📧 Email:</strong> vpriyankaverma2002@gmail.com</p>
 
             <a
               href="assets/resume/Priyanka_Verma_Resume.pdf"
               class="btn primary-btn"
               download
-              style="margin-top: 20px"
             >
               Download Resume
             </a>
           </div>
 
-          <!-- RIGHT SIDE: GOOGLE FORM -->
           <div class="form-container">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeui7HMGiOs_gp5LESUQg5X_rZ4sIQU8JME0Oz_ZAHhG4XSxw/viewform?embedded=true" width="640" height="586" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            <iframe
+              src="https://docs.google.com/forms/d/e/1FAIpQLSeui7HMGiOs_gp5LESUQg5X_rZ4sIQU8JME0Oz_ZAHhG4XSxw/viewform?embedded=true"
+              width="100%"
+              height="650"
+              frameborder="0"
+            >
+              Loading…
+            </iframe>
           </div>
         </div>
       </div>
@@ -303,12 +287,12 @@
       </div>
     </footer>
 
-    <!-- JS Files -->
+    <!-- Back to Top -->
+    <button id="backToTop" aria-label="Back to top">↑</button>
+
+    <!-- JS -->
     <script src="js/main.js"></script>
     <script src="js/theme.js"></script>
     <script src="js/gallery.js"></script>
-
-    <!-- Back to Top Button -->
-    <button id="backToTop">↑</button>
   </body>
 </html>
